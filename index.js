@@ -6,8 +6,6 @@ let func = () => {
 }
 func()
 
-$('#app').text('Hello parcel.').css('color', 'white')
-
 $('#btn').on('click', loadDate)
 
 function loadDate() {
@@ -18,9 +16,10 @@ function loadDate() {
     url: 'https://api.douban.com/v2/movie/top250?count=10'
   }).done(function (data) {
     console.log('data->', data)
-    for (var i = 0; i < data.subjects.length; i++) {
-      var ele = data.subjects[i];
-      var img = document.createElement('img')
+
+    for (let i = 0; i < data.subjects.length; i++) {
+      let ele = data.subjects[i];
+      let img = document.createElement('img')
       img.src = ele.images.small
       $('#status').text('loaded!')
       $('#douban250').append(img)
