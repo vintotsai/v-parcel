@@ -1,5 +1,4 @@
-import './reset.less'
-import './main.less'
+import './style/index.less'
 
 $('#btn').on('click', loadDate)
 
